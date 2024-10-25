@@ -130,7 +130,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 10px;
     padding: 18px;
 }
 
@@ -152,7 +152,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    margin: 20px;
+    margin: 10px;
 }
 
 .task-info h5 {
@@ -985,7 +985,7 @@ footer span {
         padding: 5px;
     }
 
-    .total-tasks-info-heading {}
+    /*.total-tasks-info-heading {} */
 
     .info {
         font-size: 1.1rem;
