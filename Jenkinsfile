@@ -1,26 +1,22 @@
-pipeline{
-  agent any
-  stages{
-    stage("checkout"){
-      steps{
-        checkout scm
-      }
+node {
+    try {
+        stage('Checkout') {
+            checkout scm
+        }
+        
+        stage('Test') {
+            bat 'npm install'
+        }
+        
+        stage('Build') {
+            bat 'npm run'
+        }
+        
+        stage('Build Image') {
+            bat 'docker build -t todos-nodejs:%BUILD_NUMBER% .'
+        }
+    } catch (Exception e) {
+        currentBuild.result = 'FAILURE'
+        throw e
     }
-    stage("Test"){
-      steps{
-        bat 'npm install'
-      }
-    }
-    stage("Build"){
-      steps{
-        bat 'npm run'
-      }
-    }
-    stage("Build Image"){
-      steps{
-        bat 'docker build -t todos-nodejs:%BUILD_NUMBER% .' 
-      }
-    }
-  }
 }
-  
