@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Ankit6098/TO-DO-List-NodeJs.git"
+    "url": "git+ssh://git@github.com:LalithaG23/Todo-List-nodejs.git"
   },
   "author": "Ankit",
   "license": "ISC",
