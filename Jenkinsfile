@@ -18,7 +18,7 @@ pipeline{
     }
     stage("Build Image"){
       steps{
-        bat 'docker build -t todos-nodejs:%BUILD_NUMBER%'
+        bat 'docker build -t todos-nodejs:%BUILD_NUMBER%' .
       }
     }
   }
