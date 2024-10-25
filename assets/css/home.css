@@ -142,6 +142,8 @@ body {
     letter-spacing: 1px;
     cursor: pointer;
     color: white;
+    overflow-y: scroll;
+    
 }
 
 .learn-more-container {
