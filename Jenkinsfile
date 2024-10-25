@@ -8,18 +8,18 @@ pipeline{
     }
     stage("Test"){
       steps{
-        sh 'sudo npm install'
-        sh 'npm test'
+        bat 'npm install'
+        bat 'npm test'
       }
     }
     stage("Build"){
       steps{
-        sh 'npm run build'
+        bat 'npm run build'
       }
     }
     stage("Build Image"){
       steps{
-        sh 'docker build -t todos-nodejs:${env.BUILD_NUMBER}'
+        bat 'docker build -t todos-nodejs:%BUILD_NUMBER%'
       }
     }
   }
