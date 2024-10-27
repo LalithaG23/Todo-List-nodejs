@@ -10,4 +10,4 @@ ADD . .
 RUN npm install
 
 # Define the command to run the app
-CMD ["npm", "index.js"]
+CMD ["node", "index.js"]
