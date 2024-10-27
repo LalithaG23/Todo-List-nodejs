@@ -11,11 +11,13 @@ const Dashboard = require('./models/dashboard');
 const app = express();
 
 // path: routes\index.js
+app.use('/', require('./routes/index'));
 app.get('/', require('./routes'));
 app.get('/dashboard', require('./routes'));
 app.get('/register', require('./routes'));
 app.get('/alltask', require('./routes'));
 app.get('/completedtask', require('./routes'));
+app.get('/login', require('./routes'));
 
 // set up the view engine
 app.set('view engine', 'ejs');
@@ -23,6 +25,8 @@ app.set('views', path.join(__dirname, 'views'));
 
 // set up the middleware
 app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // set up the static files
 app.use(express.static('assets'));
